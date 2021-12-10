@@ -162,17 +162,19 @@ let foodArr = [
 
 const findTag = (tag, array) =>{
    // console.log(tag, foodArr)
-    foodArr.filter(food =>{
+   let tagArray = []
+   array.filter(food =>{
        let foodTags = food.tags
       // console.log('food tags is', foodTags)
        if(foodTags.includes(tag)){
-           console.log (food)
-           return food
-       }
-        
+           tagArray.push(food)
+       } 
     })
+   // console.log(tagArray)
+   return tagArray
 }
-//findTag('yummy', foodArr)
+
+findTag('yummy', foodArr)
 
 //  const filteredFood = foodArr.filter(food =>{
 //      
@@ -220,18 +222,8 @@ const findTag = (tag, array) =>{
 */
 
 //CODE HERE
-// const callBackFilter = (property, number, type) =>{
-//     console.log(property, number, type)
-// }
 
-// const filterByProperty = (array, cb) =>{
-//     console.log('array', array, 'cb', cb)
-   
-
-// }
-
-
-
+//comeback to try with cb function
 
 const filterByProperty = (property, number, type, array) =>{
    // console.log(property, number, type, array)
