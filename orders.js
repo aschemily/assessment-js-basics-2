@@ -30,7 +30,19 @@
 */
 
 //CODE HERE
+class Ticket{
+    constructor(items, orderTime, customerId){
+        this.items = items
+        this.orderTime = orderTime
+        this.customerId = customerId
+        this.status = 'queued'
+    }
 
+    updateStatus(newStatus){
+        this.status = newStatus
+        console.log(`new status is ${this.status}`)
+    }
+}
 
 
 /*
@@ -45,7 +57,7 @@
 */
 
 //CODE HERE
-
+const firstTicket = new Ticket(['pizza', 'bread', 'soda', '7:03 PM', 575])
 
 /*
     Call the `updateStatus` method on
@@ -54,3 +66,7 @@
 */
 
 //CODE HERE
+
+//would like to know why its showing undefined? 
+firstTicket.updateStatus('ready for delivery')
+console.log(firstTicket.updateStatus())
