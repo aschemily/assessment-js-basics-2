@@ -35,13 +35,14 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+ const summedPrice = cart.reduce((a, b) => ({price: a.price + b.price }));
 
+ //console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
-    can take in `cartTotal`,`couponValue`,
+    can take in `calcFinalPrice`,`couponValue`,
     and `tax` arguments. 
 
     Inside the function, calculate the tax 
@@ -54,6 +55,14 @@ const cart = [
 */
 
 //CODE HERE
+
+ // is cartTotal suppose to be the param instead of calcFinalPrice?
+const calcFinalPrice = (cartTotal, couponValue, tax) =>{
+       // console.log(cartTotal,couponValue, tax )
+       let total = (cartTotal.price + tax) - couponValue;
+    return Math.round(total * 100) / 100
+}
+console.log(calcFinalPrice(summedPrice, 3, .06))
 
 
 
@@ -79,6 +88,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name of customer
+    how many people in the party 
+    food allergies
+    reservation time 
 
 */
 
@@ -88,3 +101,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'John Smith',
+    party: 5, 
+    foodAllergies: true, 
+    reservationTime: 1800
+}
