@@ -69,4 +69,4 @@ const firstTicket = new Ticket(['pizza', 'bread', 'soda', '7:03 PM', 575])
 
 //would like to know why its showing undefined? 
 firstTicket.updateStatus('ready for delivery')
-console.log(firstTicket.updateStatus())
+//console.log(firstTicket.updateStatus())

@@ -160,21 +160,27 @@ let foodArr = [
 
 //CODE HERE
 
-const findTag = (tag, array) =>{
-   // console.log(tag, foodArr)
-   let tagArray = []
-   array.filter(food =>{
-       let foodTags = food.tags
-      // console.log('food tags is', foodTags)
-       if(foodTags.includes(tag)){
-           tagArray.push(food)
-       } 
-    })
-   // console.log(tagArray)
-   return tagArray
-}
+//too redundant
 
-findTag('yummy', foodArr)
+// const findTag = (tag, array) =>{
+//    // console.log(tag, foodArr)
+//    let tagArray = []
+//    array.filter(food =>{
+//        let foodTags = food.tags
+//       // console.log('food tags is', foodTags)
+//        if(foodTags.includes(tag)){
+//            tagArray.push(food)
+//        } 
+//     })
+//    // console.log(tagArray)
+//    return tagArray
+// }
+
+// const findTag = tag =>{
+//     foodArr.filter(food =>{ return food.tags.includes(tag) })
+// }
+
+// console.log(findTag('yummy'))
 
 //  const filteredFood = foodArr.filter(food =>{
 //      

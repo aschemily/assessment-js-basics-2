@@ -56,7 +56,7 @@ const greetUser = (username) =>{
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-//shouldn't this take in 2 arguments? The array and the zipcode passed in?
+
 const canWeDeliver = (zipArray, zipCode) =>{
    zipArray.find(zip =>{
        //console.log('zip is', zip)
@@ -89,6 +89,7 @@ const canWeDeliver = (zipArray, zipCode) =>{
 */
 
 // CODE HERE
+//go over not passing array as a parameter 
 
 const canWeDeliverTwo = (zipArray, zipCode) =>{
     if(zipArray.includes(zipCode)){
@@ -137,9 +138,10 @@ const deals = [
 //CODE HERE
 //deals[0].title = '10% Off!'
 //deals[0].title.replace('15% Off!','10% Off!')
-// let replace = deals[0].title
-// replace.replace('15% Off!','10% Off!')
-// console.log(deals)
+ // replaced = deals[0].title
+ deals[0].title = deals[0].title.replace('15%', '10%')
+ //replaced = deals[0].title.replace('15%','10%')
+ console.log(deals[0])
 
 
 
@@ -158,4 +160,4 @@ const deals = [
 
 //CODE HERE
 deals[1].desc = 'This deal lasts until the end of April!'
-console.log(deals)
+//console.log(deals)

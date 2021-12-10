@@ -36,6 +36,9 @@ const cart = [
 //CODE HERE
 
  const summedPrice = cart.reduce((a, b) => ({price: a.price + b.price }));
+ 
+ const sumPrice = cart.reduce((a,b) =>{a + b.price, 0})
+   // console.log(sumPrice, summedPrice)
 
  //console.log(summedPrice)
 
@@ -59,10 +62,11 @@ const cart = [
  // is cartTotal suppose to be the param instead of calcFinalPrice?
 const calcFinalPrice = (cartTotal, couponValue, tax) =>{
        // console.log(cartTotal,couponValue, tax )
-       let total = (cartTotal.price + tax) - couponValue;
+       let total = (cartTotal.price * (tax + 1)) - couponValue;
+       
     return Math.round(total * 100) / 100
 }
-console.log(calcFinalPrice(summedPrice, 3, .06))
+console.log('final price', calcFinalPrice(summedPrice, 3, .06))
 
 
 
