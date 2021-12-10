@@ -32,6 +32,16 @@
 
 //CODE HERE
 
+const pizza ={
+    name: 'mushroom',
+    price: 14,
+    category: 'entree',
+    popularity: 5,
+    rating: 6,
+    tags: ['gluten-free', 'veggie', 'tasty']
+
+}
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -44,6 +54,8 @@
 
 //CODE HERE
 
+//console.log('popularity is', pizza.popularity)
+
 
 /*
     Second, log the second tag in your pizza's
@@ -53,6 +65,7 @@
 */
 
 //CODE HERE
+//console.log('second tag is', pizza.tags[1])
 
 
 /*
@@ -63,6 +76,8 @@
 */
 
 //CODE HERE
+let {price} = pizza
+//console.log('price is', price)
 
 
 /*
@@ -73,6 +88,8 @@
 */
 
 //CODE HERE
+let {category} = pizza 
+//console.log('category is', category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,7 +105,45 @@
 */
 
 //CODE HERE
+let foodArr = [
+    { name: 'mushroom',
+    price: 14,
+    category: 'entree',
+    popularity: 5,
+    rating: 20,
+    tags: ['gluten-free', 'veggie', 'tasty']
+    },
+    { 
+        name: 'blt',
+        price: 10,
+        category: 'lunch',
+        popularity: 10,
+        rating: 10,
+        tags: ['the best sandwich', 'yummy', 'sourdough']
+    },
+    { name: 'sushi',
+    price: 20,
+    category: 'entree',
+    popularity: 9,
+    rating: 8.5,
+    tags: ['sushi for days', 'vegan sushi', 'sashimi']
+    },
+    { name: 'mac n cheese',
+    price: 7,
+    category: 'appetizer',
+    popularity: 8,
+    rating: 7,
+    tags: ['cheesy', 'lobster-mac', 'yummy']
+    },
+    { name: 'chicken soup',
+    price: 5,
+    category: 'appetizer',
+    popularity: 10,
+    rating: 1,
+    tags: ['good for the soul', 'warmth', 'flavorful']
+    }
 
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +160,23 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const findTag = (tag, array) =>{
+   // console.log(tag, foodArr)
+    foodArr.filter(food =>{
+       let foodTags = food.tags
+      // console.log('food tags is', foodTags)
+       if(foodTags.includes(tag)){
+           console.log (food)
+           return food
+       }
+        
+    })
+}
+//findTag('yummy', foodArr)
+
+//  const filteredFood = foodArr.filter(food =>{
+//      
+//  })
 
 
 
@@ -149,6 +220,36 @@
 */
 
 //CODE HERE
+// const callBackFilter = (property, number, type) =>{
+//     console.log(property, number, type)
+// }
+
+// const filterByProperty = (array, cb) =>{
+//     console.log('array', array, 'cb', cb)
+   
+
+// }
+
+
+
+
+const filterByProperty = (property, number, type, array) =>{
+   // console.log(property, number, type, array)
+   let answer = []
+    array.filter(food =>{
+        
+       if(type === 'above' && food[property] > number){
+            answer.push(food)
+       }else if(type === 'below' && food[property] < number){
+          answer.push(food)
+       }
+    })
+    return answer
+}
+
+
+
+
 
 
 /*
@@ -159,3 +260,4 @@
 */
 
 //CODE HERE
+//console.log(filterByProperty('rating', 5, 'above', foodArr))
