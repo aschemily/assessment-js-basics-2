@@ -23,6 +23,12 @@
 
 //CODE HERE
 
+const greetUser = (username) =>{
+    return `Welcome back, ${username}`
+}
+
+//console.log(greetUser('Andrew'))
+
 
 
 
@@ -50,7 +56,19 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
+//shouldn't this take in 2 arguments? The array and the zipcode passed in?
+const canWeDeliver = (zipArray, zipCode) =>{
+   zipArray.find(zip =>{
+       //console.log('zip is', zip)
+       if(zip === zipCode){
+           console.log(`You're in our delivery zone!`)
+       }else{
+           console.log(`Sorry, we can't deliver to that address`)
+       }
+   })
+}
 
+//canWeDeliver(deliveryAreaZipCodes, 85205)
 
 
 /* 
@@ -71,6 +89,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+
+const canWeDeliverTwo = (zipArray, zipCode) =>{
+    if(zipArray.includes(zipCode)){
+        console.log(`You're in our delivery zone!`)
+       }else{
+           console.log(`Sorry, we can't deliver to that address`)
+       }
+ }
+
+ //canWeDeliverTwo(deliveryAreaZipCodes, 85205)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -107,6 +135,11 @@ const deals = [
 */
 
 //CODE HERE
+//deals[0].title = '10% Off!'
+//deals[0].title.replace('15% Off!','10% Off!')
+// let replace = deals[0].title
+// replace.replace('15% Off!','10% Off!')
+// console.log(deals)
 
 
 
@@ -124,3 +157,5 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = 'This deal lasts until the end of April!'
+console.log(deals)
