@@ -20,6 +20,16 @@
 */
 
 //CODE HERE
+class Employee{
+    constructor(name, shifts){
+        this.name = name
+        this.shifts = shifts 
+    }
+
+    getSchedule(){
+        return `${this.name} works on ${this.shifts}`
+    }
+}
 
 
 
@@ -34,6 +44,7 @@
 */
 
 //CODE HERE
+const empOne = new Employee('Jess','weekday mornings, weekday afternoons')
 
 /*
     Call the `getSchedule` method on the
@@ -41,6 +52,7 @@
 */
 
 //CODE HERE
+//console.log('employee schedule is', empOne.getSchedule())
 
 
 /*
@@ -56,7 +68,9 @@
 */
 
 //CODE HERE
-
+const empTwo = {...empOne}
+//empTwo.name = 'Nick'
+//console.log('empTwo', empTwo, empOne)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -84,6 +98,21 @@
 
 //CODE HERE
 
+class Manager extends Employee{
+    constructor(name, employee, employees){
+        super(name, employee, employees);
+        this.employees = employees
+    }
+
+    getEmployees(){
+        console.log(`calling function: ${this.name} manages ${this.employees}`)
+    }
+
+    addEmployee(emp){
+       this.employees.push(emp)
+    }
+}
+
 
 
 /*
@@ -98,6 +127,7 @@
 */
 
 //CODE HERE
+const emp3 = new Manager('Winston','weekday mornings, weekday afternoons',['Cece', 'Schmidt'] )
 
 
 /*
@@ -106,6 +136,7 @@
 */
 
 //CODE HERE
+//console.log(emp3.getEmployees())
 
 /*
     Call the `addEmployee` method on the 
@@ -114,6 +145,8 @@
 */
 
 //CODE HERE 
+emp3.addEmployee('Coach')
+console.log('added employee', emp3.getEmployees())
 
 /*
     Call the `getEmployees` method on the
